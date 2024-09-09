@@ -1,7 +1,7 @@
 <template>
   <div class="app-chat">
     <!-- Usuario 1 -->
-    <div class="usuario-contenedor" v-if="usuarios.length">
+    <div class="container-usuario" v-if="usuarios.length">
       <img :src="usuarios[0].picture.large" class="avatar" />
       <p class="nombre">
         {{ usuarios[0].name.first }} {{ usuarios[0].name.last }}
@@ -11,8 +11,8 @@
       <button @click="enviarMensaje(1)">Enviar</button>
     </div>
 
-    <!-- Chatbox -->
-    <div class="chat-contenedor">
+    <!-- ChatBox -->
+    <div class="ChatBox">
       <div
         v-for="(mensaje, index) in mensajes"
         :key="index"
@@ -37,7 +37,7 @@
     </div>
 
     <!-- Usuario 2 -->
-    <div class="usuario-contenedor" v-if="usuarios.length">
+    <div class="container-usuario" v-if="usuarios.length">
       <img :src="usuarios[1].picture.large" class="avatar" />
       <p class="nombre">
         {{ usuarios[1].name.first }} {{ usuarios[1].name.last }}
@@ -59,7 +59,7 @@ export default {
       mensajes: [],
       mensajeUsuario1: "",
       mensajeUsuario2: "",
-      colorUsuario1: "#03fcf8",//color por defecto 
+      colorUsuario1: "#03fcf8", //color por defecto
       colorUsuario2: "#e6608d",
     };
   },
